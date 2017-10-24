@@ -1,0 +1,25 @@
+<nav class="navbar navbar-right navbar-light" style="font-family: Verdana, Geneva, sans-serif; margin-bottom: 0; background-color: transparent;">
+  <div class="container-fluid">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav" style="font-size: 1em; color: black;">
+          <li><%= link_to "ABOUT", about_path  %></li>
+          <li><%= link_to "FEATURED", all_posts_path %> </li>
+          <li><%= link_to "NEW POST", new_post_path %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CATEGORIES<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li>People</li>
+              <li>Places & Attractions</li>
+              <li>Things</li>
+              <li>Food & Dining</li>
+              <li>Events & Activities</li>
+            </ul>
+          </li>
+          <li><%= link_to "CONTACT", contact_path %></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

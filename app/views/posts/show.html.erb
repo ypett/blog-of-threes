@@ -1,0 +1,39 @@
+<div class="container-fluid" style="font-family: 'Verdana', 'Geneva', sans-serif'; font-size: 16px;">
+    <div class="row">
+      <div style="text-align: center;">
+
+        <p id="notice"><%= notice %></p>
+
+        <h1>View Post</h1>
+
+        <p>
+          <strong>Title:</strong>
+          <%= @post.title %>
+        </p>
+
+        <p>
+          <strong>Author:</strong>
+          <%= @post.author %>
+        </p>
+
+        <p>
+          <strong>Entry 1:</strong>
+          <%= @post.entry_1 %>
+        </p>
+
+        <p>
+          <strong>Entry 2:</strong>
+          <%= @post.entry_2 %>
+        </p>
+
+        <p>
+          <strong>Entry 3:</strong>
+          <%= @post.entry_3 %>
+        </p>
+
+        <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-warning' %>
+        <%= link_to 'Back', all_posts_path, class: 'btn btn-primary' %>
+
+    </div>
+  </div>
+</div>

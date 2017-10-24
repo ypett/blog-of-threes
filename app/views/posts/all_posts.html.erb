@@ -1,0 +1,48 @@
+<div class="container img-responsive" style="font-family: Verdana, Geneva, sans-serif;
+                                    background-image: url('http://maxpixel.freegreatpicture.com/static/photo/1x/Feminine-Desktop-Notebook-Blog-Mockup-White-2325627.jpg');
+                                    background-size: cover;
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    height: 70em;
+                                    width: 100%;">
+
+          <h2 style="text-align: center;">Featured Posts</h2>
+    <br>
+    <div class="text-center">
+      <%= link_to 'Home', root_path, class: 'btn btn-primary' %>
+    </div>
+
+    <br>
+
+
+          <% @posts.each do |post| %>
+
+            <div class="col-lg-3 col-md-4 col-sm-8 col-xs-10">
+              <div class="thumbnail" style="height: 242px; width: 300px;">
+
+                <div class="text-center">
+                  <h4><%= post.title %></h4>
+                  <p>Created by: <%= post.author %>
+                    <%= time_ago_in_words(post.created_at, include_seconds: true) %> ago
+                  </p>
+                </div>
+
+                  <ol>
+                    <li><%= post.entry_1 %></li>
+                    <li><%= post.entry_2 %></li>
+                    <li><%= post.entry_3 %></li>
+                  </ol>
+
+                  <div class="caption" style="text-align: center; position: absolute; bottom: 20px; left: 60px;">
+                    <%= link_to 'Show', post, class: 'btn btn-info' %>
+                    <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning' %>
+                    <%= link_to 'Destroy', post, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </div><!-- caption -->
+
+                </div><!-- thumbnail -->
+            </div><!-- col-md-3 -->
+          <% end %>
+
+      </div><!-- row -->
+
+  </div><!-- container-fluid -->
