@@ -15,15 +15,15 @@
     <br>
 
 
-          <% @posts.each do |post| %>
+          <% @posts.order(updated_at: :desc).each do |post| %>
 
             <div class="col-lg-3 col-md-4 col-sm-8 col-xs-10">
               <div class="thumbnail" style="height: 242px; width: 300px;">
 
                 <div class="text-center">
                   <h4><%= post.title %></h4>
-                  <p>Created by: <%= post.author %>
-                    <%= time_ago_in_words(post.created_at, include_seconds: true) %> ago
+                  <p>Last updated by: <%= post.author %>
+                    <%= time_ago_in_words(post.updated_at, include_seconds: true) %> ago
                   </p>
                 </div>
 
@@ -35,9 +35,17 @@
 
                   <div class="all-posts">
                     <%= link_to 'Show', post, class: 'btn btn-info' %>
-                    <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning' %>
-                    <%= link_to 'Destroy', post, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
-                  </div><!-- caption -->
+                    <% if current_user.name == post.author %>
+                      <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning' %>
+                      <%= link_to 'Destroy', post, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <% else %>
+                      <!-- disabled with jQuery in application.js -->
+                      <%= link_to 'Edit', all_posts_path, class: 'btn btn-warning', disabled: true %>
+                      <%= link_to 'Destroy', all_posts_path, class: 'btn btn-danger', disabled: true %>
+                      <%#= button_to 'Edit', edit_post_path(post), class: 'btn btn-warning', disabled: true %>
+                      <%#= button_to 'Destroy', post, class: 'btn btn-danger',method: :delete, data: { confirm: 'Are you sure?' }, disabled: true %>
+                    <% end %>
+                  </div><!-- all-posts -->
 
                 </div><!-- thumbnail -->
             </div><!-- col-md-3 -->
