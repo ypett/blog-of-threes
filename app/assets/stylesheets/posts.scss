@@ -73,3 +73,32 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.login-bg {
+    background-image: url('project-img2.jpeg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:rgba(0, 0, 0, 0.5);
+    opacity: 0.95;
+    height: 100vh;
+}
+
+.signup-bg {
+    background-image: url('vintage-typewriter.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:rgba(0, 0, 0, 0.5);
+    opacity: 0.95;
+    height: 100vh;
+}
+
+.well {
+    text-align: center;
+    margin: 20px;
+    width: 300px;
+    opacity: 0.65;
+}
